@@ -7,6 +7,7 @@ public class Lend {
     private int cod_book;
     private int cod_user;
     private Timestamp lend_date;
+    private Timestamp return_date;
 
     public Long getCod() {
         return cod;
@@ -40,6 +41,14 @@ public class Lend {
         this.lend_date = lend_date;
     }
 
+    public Timestamp getReturn_date() {
+        return return_date;
+    }
+
+    public void setReturn_date(Timestamp return_date) {
+        this.return_date = return_date;
+    }
+
     @Override
     public String toString() {
         return "Lend{" +
@@ -47,6 +56,7 @@ public class Lend {
                 ", cod_book=" + cod_book +
                 ", cod_user=" + cod_user +
                 ", lend_date=" + lend_date +
+                ", return_date=" + return_date +
                 '}';
     }
 }

@@ -97,6 +97,7 @@ public class UserDAO implements IUserIDAO{
     }
 
     private User ConvertDAO(ResultSet rs) throws SQLException {
+        String id = rs.getString("id");
         String name = rs.getString("nombre");
         String lastName = rs.getString("apellido");
         String email = rs.getString("email");
@@ -114,7 +115,6 @@ public class UserDAO implements IUserIDAO{
             rs = ps.executeQuery();
             if(rs.next()){
                 user = ConvertDAO(rs);
-                user.setId(id);
             }
             return user;
         } catch (SQLException e) {
