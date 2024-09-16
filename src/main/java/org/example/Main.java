@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.DAO.DAOException;
-import org.example.DAO.UserDAO;
+import org.example.controller.UserDAO;
 import org.example.model.User;
 
 import java.sql.Connection;

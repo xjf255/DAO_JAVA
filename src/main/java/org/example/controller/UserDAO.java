@@ -1,5 +1,7 @@
-package org.example.DAO;
+package org.example.controller;
 
+import org.example.DAO.DAOException;
+import org.example.DAO.IUserIDAO;
 import org.example.model.User;
 
 import java.sql.Connection;
@@ -9,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements IUserIDAO{
+public class UserDAO extends User implements IUserIDAO {
 
     final String INSERT = "insert into usuario(nombre,apellido,email) values(?,?,?)";
     final String GETALL = "select * from usuario";

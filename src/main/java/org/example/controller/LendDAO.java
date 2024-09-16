@@ -1,5 +1,7 @@
-package org.example.DAO;
+package org.example.controller;
 
+import org.example.DAO.DAOException;
+import org.example.DAO.ILendIDAO;
 import org.example.model.Lend;
 
 import java.sql.Connection;
@@ -9,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LendDAO implements ILendIDAO{
+public class LendDAO extends Lend implements ILendIDAO {
     final String GETALL = "select * from libroprestado";
     final String GET = "select * from libroprestado where cod_prestamo=?";
     final String SAVE = "insert into libroprestado(cod_libro,cod_usuario,fecha_prestamo) values(?,?,?)";
@@ -27,7 +29,7 @@ public class LendDAO implements ILendIDAO{
         return lend;
     }
 
-    private LendDAO(Connection conn){
+    public LendDAO(Connection conn){
             this.conn = conn;
     }
 

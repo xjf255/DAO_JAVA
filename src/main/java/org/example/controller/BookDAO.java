@@ -1,5 +1,7 @@
-package org.example.DAO;
+package org.example.controller;
 
+import org.example.DAO.DAOException;
+import org.example.DAO.IBookIDAO;
 import org.example.model.Books;
 
 import java.sql.Connection;
@@ -9,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAO implements IBookIDAO{
+public class BookDAO extends Books implements IBookIDAO {
     final String SAVE = "INSERT INTO libro(titulo_libro,autor_libro,disponible) VALUES(?,?,?)";
     final String DELETE = "DELETE FROM libro WHERE cod_libro = ?";
     final String UPDATE = "UPDATE libro set titulo_libro = ?, autor_libro = ?, disponible = ? WHERE cod_libro = ?";
